@@ -18,8 +18,8 @@ public:
 		vector<int> v;
 		for (int i = rowIndex*(rowIndex + 1) / 2, j = rowIndex / 2; j >= 0; --j, ++i)
 			v.push_back(n[i]);
-		for(int i= (rowIndex + 1)/2;i>0;i--)
-			v.push_back(n[i-1]);
+		for(int i = (rowIndex + 1)/2;i>0;i--)
+			v.push_back(n[rowIndex*(rowIndex + 1)/2+i-1]);
 
 		delete n;
 		return v;
