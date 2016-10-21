@@ -1,0 +1,17 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+    unordered_map<int,int> m;
+    for(int i=0;i<nums.size();i++){
+        if(m.count(target-nums[i])==true){
+            vector<int> v{i,m[target-nums[i]]};
+            return v;
+        }
+        else m[nums[i]]=i;
+    }
+    vector<int> v;
+    return v;    
+}
+};
+
+//以空间换时间
