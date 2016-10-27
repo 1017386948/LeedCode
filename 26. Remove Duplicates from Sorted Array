@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+		if (nums.size() == 0 || nums.size() == 1)
+			return nums.size();
+		auto count = nums.begin();
+		for (auto i = nums.begin(); i!=nums.end(); i++) {
+			if (i == nums.end()-1||*i != *(i+1)) {
+				*count = *i;
+				count++;
+			}
+			else 
+				continue;
+		}
+
+		nums.erase(count,nums.end());
+		return nums.size();
+    }
+};
+
+//思路：设置两个指针，第一个用来指定新数列排序位置，第二个筛选无重复数字。
