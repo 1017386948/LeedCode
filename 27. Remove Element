@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int removeElement(vector<int>& nums, int val) {
+        while(nums.size()&&*nums.begin()==val)
+            nums.erase(nums.begin());
+        if(nums.size()==0)
+            return 0;
+        auto count = nums.begin();
+        int size = 1;
+        for(auto i = nums.begin()+1;i!=nums.end();i++){
+            if(*i!=val){
+                count++;
+                *count = *i;
+                size++;
+            }
+            else continue;
+        }
+        return size;
+        
+    }
+};//与26题思路一样
