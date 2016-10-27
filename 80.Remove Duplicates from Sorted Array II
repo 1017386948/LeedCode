@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        auto count  = nums.begin();
+        int n = 0;
+        if(nums.size()<3)
+            return nums.size();
+        for(auto i = nums.begin();i!=nums.end();++i){
+            if(i==nums.end()-2||i==nums.end()-1||*i!=*(i+2)){
+                *count=*i;
+                count++;
+                ++n;
+            }
+            else continue;
+        }
+        //nums.erase(count,nums.end());
+        //return nums.size();
+        return n;
+    }
+};
