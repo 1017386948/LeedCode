@@ -1,0 +1,15 @@
+class Solution {
+public:
+    vector<int> plusOne(vector<int>& digits) {
+        int flag=1;
+        for(auto i=digits.end()-1;i>=digits.begin();--i){
+            int n = *i;
+            *i=(n+flag)%10;
+            flag=(n+flag)/10;
+        }
+        if(flag){
+            digits.insert(digits.begin(),1);
+        }
+        return digits;
+    }
+};//this method didn't work well.It takes to much time.
